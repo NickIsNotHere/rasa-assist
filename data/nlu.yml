@@ -1,0 +1,121 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+    - hi
+    - 你好
+    - 早
+    - 早上好
+    - 晚上好
+    - 中午好
+    - 周末好
+    - 节日快乐
+- intent: subscribe
+  examples: |
+    - I want to get the newsletter
+    - Can you send me the newsletter?
+    - Can you sign me up for the newsletter?
+    - 我想要新闻稿
+    - 能不能把新闻稿发给我
+    - 我想订新闻稿
+- intent: inform
+  examples: |
+    - My email is example@example.com
+    - random@example.com
+    - Please send it to anything@example.com
+    - Email is something@example.com
+    - 请发：example@example.com
+    - example@example.com,谢谢
+    - 我的邮箱：example@example.com
+- intent: challenge
+  examples: |
+    - are you a robot?
+    - robot?
+    - you are not a human,right?
+    - not human?
+    - 你是一个机器人吧？
+    - 机器人？
+    - 你不是真人，对吧？
+    - 不是真人？
+- intent: chitchat/ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for you?
+    - 姓名？
+    - 你叫什么名字？
+    - 请告诉我你的姓名
+    - 怎么称呼您？
+    - 怎么称呼你？
+    - 你有名字吗？
+- intent: chitchat/ask_weather
+  examples: |
+    - what's the weather like today?
+    - Does it look sunny outside today?
+    - oh,do you mind checking the weather for me?
+    - I like sunny days in Berlin
+    - 今天天气如何？
+    - 今天外面阳光好吗？
+    - 可不可以帮我查一下天气
+    - 我喜欢晴天
+- intent: faq/ask_product
+  examples: |
+    - what's your product name?
+    - product name?
+    - what can I call your product?
+    - 你们产品的名字？
+    - 你们产品叫什么？
+    - 产品名称？
+    - 产品名字
+- intent: faq/ask_company
+  examples: |
+    - what is your company name?
+    - your company?
+    - company?
+    - 你们公司叫什么名字？
+    - 你们公司？
+    - 公司？
+    - 公司名称？
+- intent: affirm
+  examples: |
+    - yes
+    - 好
+    - 很好
+    - 可以
+    - 就这样
+    - ok
+- intent: deny
+  examples: |
+    - no
+    - 不
+    - 不要
+    - 不是这样
+    - 你没理解我
+    - 你理解得不对
+    - 不对
+- intent: request_restaurant
+  examples: |
+    - 我想找个饭店
+    - 请帮我找个[火锅](cuisine)店
+    - 我想找个[湘菜](cuisine)馆
+    - 帮我订个饭店
+    - 我要订餐
+    - 我要订个饭店
+- intent: inform
+  examples: |
+    - [川菜](cuisine)
+    - [湘菜](cuisine)
+    - [粤菜](cuisine)
+    - [淮扬菜](cuisine)
+    - [鲁菜](cuisine)
+    - [西餐](cuisine)
+    - [2](number)人
+    - [3](number)位
+    - [10](number)位，谢谢！
+

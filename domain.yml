@@ -1,0 +1,121 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- stop
+- greet
+- challenge
+- inform
+- subscribe
+- chitchat
+- faq
+- request_restaurant
+- affirm
+- deny
+slots:
+  email:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  cuisine:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  num_people:
+    type: float
+    auto_fill: false
+    influence_conversation: false
+  outdoor_sitting:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: |
+      Hello! How can I help you?
+      你好，有什么可以帮你？
+      你好，有什么可以帮您？
+      你好！
+  - text: |
+      Hi!
+  utter_ask_email:
+  - text: |
+      What is your email address?
+      你的邮箱？
+      请告诉我你的邮箱
+      请告诉我您的邮箱
+  utter_subscribed:
+  - text: |
+      Check your inbox at {email} in order to finish subscribing to the newsletter!
+      请到您的收件箱{email}完成订阅
+      请查收订阅邮件并反馈{email}
+  - text: |
+      You're all set! Check your inbox at {email} to confirm your subscription.
+      已经设置好了，请到{email}确认
+  utter_challenge:
+  - text: |
+      I am a robot,powered by rasa!
+  - text: a rasa robot!
+  utter_chitchat/ask_name:
+  - image: "https://i.imgur.com/zTvA58i.jpeg"
+    text: Hello, my name is Retrieval Bot
+  - text: I am called Retrieval Bot!
+  - text: 我是个rasa机器人！
+  - text: 我是机器人
+  utter_chitchat/ask_weather:
+  - text: Oh, it does look sunny right now in Berlin
+    image: "https://i.imgur.com/vwv7aHN.png"
+  - text: I am not sure of the whole week but I can see the sun is out today.
+  - text: 真是个好天气
+  - text: 今天天气不错，但我不敢肯定本周将会如何
+  utter_faq/ask_product:
+  - text: RPA
+    image: "https://i.imgur.com/vwv7aHN.png"
+  - text: Robot Process Automation
+  utter_faq/ask_company:
+  - text: Kim
+  - text: Kim in zhuhai
+  - text: 金智维
+  - text: 金智维科技有限公司
+  utter_ask_cuisine:
+  - text: "什么类型的美食？"
+  utter_ask_num_people:
+  - text: "请问几位就餐？"
+  utter_ask_outdoor_sitting:
+  - text: "坐外面可以吗？"
+  utter_submit:
+  - text: "订好了"
+  utter_slots_values:
+  - text: "我按照以下标准查找，你看可以吗？\n-种类：{cuisine}\n-人数：{num_people}\n-外面就餐:{outdoor_sitting}"
+  utter_please_rephrase:
+    - text: "不好意思，我没有理解您的要求，请您换个方式提一下！"
+actions:
+- '...'
+- utter_greet
+- utter_challenge
+- utter_subscribed
+- utter_faq
+- utter_chitchat
+forms:
+  newsletter_form:
+    email:
+    - type: from_text
+  restaurant_form:
+    cuisine:
+    - type: from_entity
+      entity: cuisine
+    num_people:
+    - type: from_entity
+      entity: number
+    outdoor_sitting:
+    - type: from_intent
+      intent: affirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
+entities:
+  - cuisine
+  - number
+
