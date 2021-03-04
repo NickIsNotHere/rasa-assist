@@ -102,8 +102,8 @@ nlu:
 - intent: request_restaurant
   examples: |
     - 我想找个饭店
-    - 请帮我找个[火锅](cuisine)店
-    - 我想找个[湘菜](cuisine)馆
+    - 请帮我找个[火锅]{"entity":"cuisine"}店
+    - 我想找个[湘菜]{"entity":"cuisine"}馆
     - 帮我订个饭店
     - 我要订餐
     - 我要订个饭店
@@ -118,4 +118,5 @@ nlu:
     - [2](number)人
     - [3](number)位
     - [10](number)位，谢谢！
+    - [5](number)
 
