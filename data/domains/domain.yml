@@ -3,16 +3,17 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- stop
-- greet
-- challenge
-- inform
-- subscribe
-- chitchat
-- faq
-- request_restaurant
-- affirm
-- deny
+ - stop
+ - greet
+ - challenge
+ - inform
+ - subscribe
+ - chitchat
+ - faq
+ - request_restaurant
+ - affirm
+ - deny
+ - example
 slots:
   email:
     type: text
@@ -91,16 +92,16 @@ responses:
   utter_please_rephrase:
     - text: "不好意思，我没有理解您的要求，请您换个方式提一下！"
 actions:
-- '...'
-- utter_greet
-- utter_challenge
-- utter_subscribed
-- utter_faq
-- utter_chitchat
+ - '...'
+ - utter_greet
+ - utter_challenge
+ - utter_subscribed
+ - utter_faq
+ - utter_chitchat
+ - action_bad_answer
+ - action_hello_world
+
 forms:
-  newsletter_form:
-    email:
-    - type: from_text
   restaurant_form:
     cuisine:
     - type: from_entity

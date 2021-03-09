@@ -12,3 +12,7 @@ stories:
    - action: utter_greet
    - intent: challenge
    - action: utter_challenge
+ - story: example
+   steps:
+     - intent: example
+     - action: action_hello_world

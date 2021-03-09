@@ -4,7 +4,7 @@ pipeline:
     model: "zh_core_web_md"
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
-      pooling: mean
+    pooling: mean
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer

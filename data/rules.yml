@@ -35,6 +35,10 @@ rules:
    - action: utter_slots_values
  - rule: Ask user to rephrase whenever they send a low nlu message
    steps:
-     - intent: nlu_fallback
-     - action: utter_please_rephrase
+   - intent: nlu_fallback
+   - action: utter_please_rephrase
+ - rule: When user denied the answer
+   steps:
+     - intent: deny
+     - action: action_bad_answer
 
